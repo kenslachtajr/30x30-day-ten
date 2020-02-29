@@ -15,7 +15,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@items/core-data": ["libs/core-data/src/index.ts"],
+      "@items/material": ["libs/material/src/index.ts"],
+      "@items/ui-libraries": ["libs/ui-libraries/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
