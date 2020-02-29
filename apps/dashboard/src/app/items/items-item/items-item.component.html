@@ -1,1 +1,21 @@
-<p>items-item works!</p>
+<div
+  class="d-flex justify-content-center align-content-center mt-5"
+  *ngIf="currentItem | async as item"
+>
+  <button mat-button [routerLink]="['/items']" routerLinkActive="active">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <mat-card class="col-4">
+    <mat-card-header>
+      <mat-card-title>
+        <h1>{{ originalTitle }}</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <h3>Item Name:</h3>
+      <p>{{ item.name }}</p>
+      <h3>Item Description:</h3>
+      <p>{{ item.description }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

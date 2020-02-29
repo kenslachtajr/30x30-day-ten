@@ -1,1 +1,18 @@
-<p>items works!</p>
+<div class="container d-flex mt-3">
+  <div class="col-6">
+    <items-items-list
+      [items]="items$ | async"
+      (selected)="selectItem($event)"
+      (deleted)="deleteItem($event)"
+    >
+    </items-items-list>
+  </div>
+  <div class="col-6">
+    <items-items-detail
+      [item]="selectedItem"
+      [form]="form"
+      (saved)="saveItem($event)"
+      (cancelled)="cancel()"
+    ></items-items-detail>
+  </div>
+</div>

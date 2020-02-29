@@ -1,1 +1,32 @@
-<p>items-list works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Phones</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item
+        *ngFor="let item of items"
+        [routerLink]="[item.id]"
+        class="mat-list-option border-bottom"
+      >
+        <h3 mat-line>{{ item.name }}</h3>
+        <p mat-line>{{ item.description }}</p>
+        <button
+          class="mr-2"
+          mat-mini-fab
+          (click)="selected.emit(item); $event.stopImmediatePropagation()"
+        >
+          <mat-icon>launch</mat-icon>
+        </button>
+        <button
+          mat-mini-fab
+          (click)="deleted.emit(item); $event.stopImmediatePropagation()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
